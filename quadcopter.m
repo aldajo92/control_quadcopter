@@ -6,16 +6,16 @@ function [t,x] = quadcopter(u, x0, t, step)
     w4 = u(4);
 
     % Parameters
-    Ixx = 0.01;
+    Ixx = 4.856e-3;
     Iyy = Ixx;
     Izz = 0.05;
 
-    k = 2.98e-6;% cosntante de empuje  
-    b = 1;      % constante de arrastre
-    l = 0.5;    % distancia entre el motor el centro de masa del quadcopter.
-    JR = 0.2;   % momento de inercia del motor.
-    m = 1.8;    % masa del quadcopter
-    g = 9.8;    % constante de gravedad
+    k = 1.98e-6;    % cosntante de empuje  
+    b = 1.14e-7;    % constante de arrastre
+    l = 0.225;        % distancia entre el motor el centro de masa del quadcopter.
+    JR = 0.5e-5;       % momento de inercia del motor.
+    m = 5;        % masa del quadcopter
+    g = 9.8;        % constante de gravedad
     
     % Calculating inputs
     f1 = k*w1^2;
