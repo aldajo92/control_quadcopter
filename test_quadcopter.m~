@@ -12,7 +12,7 @@ clc; clear; close all
 
 %%
 
-k = 5.98e-5;        % cosntante de empuje
+k = 1.98e-6;        % cosntante de empuje
 m = 3.5;            % masa del quadcopter
 g = 9.8;            % constante de gravedad
 
@@ -26,7 +26,7 @@ time = 0:Ts:Tf;
 
 Samples = size(time, 2);
 eqW = (sqrt(m*g/k)/2);
-w = [ eqW, eqW+10, eqW-11, eqW, eqW, eqW-20, eqW+20, eqW, eqW, eqW, eqW, eqW];
+w = [ eqW, eqW+10, eqW-10, eqW, eqW-20, eqW+20, eqW, eqW+10, eqW-10, eqW, eqW,eqW];
 
 x_quad = [];
 t_total = [];
@@ -43,9 +43,8 @@ end
 
 subplot(2,1,1)
 plot(t_total, x_quad(:,3), 'b','LineWidth', 3.0)
-title('Position z_{quadcopter} (meters)');
+title('Pos_{system}');
 grid on
 subplot(2,1,2)
 plot(t_total, control, 'r--','LineWidth', 3.0)
-title('Input \omega_{1}=\omega_{2}=\omega_{3}=\omega_{4} (Hz)');
 grid on
